@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leonardo Barcos — Desenvolvedor Web · Belém, PA</title>
+<meta name="description" content="Desenvolvedor web em Belém do Pará. Sistemas de reserva, pagamentos online e painéis de gestão para negócios reais: Iate Borarí, Hotel Gold Martan e Clube de Criativos do Pará.">
+<meta name="theme-color" content="#0B1B24">
+<!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn). Troque SEU-DOMINIO quando tiver o domínio. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Leonardo Barcos — Desenvolvedor Web em Belém">
+<meta property="og:description" content="Sites e sistemas que vendem: reservas, pagamentos online e painéis de gestão. Cases: Iate Borarí, Hotel Gold Martan e CCPA.">
+<meta property="og:url" content="https://SEU-DOMINIO.com.br">
+<meta property="og:image" content="https://SEU-DOMINIO.com.br/img/leonardo.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1B24'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='30' fill='%23E3A23B'%3ELB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B1B24; --surface:#102430; --surface-2:#163240;
+    --text:#EAF2F1; --muted:#93AAAE;
+    --amber:#E3A23B; --teal:#4FADA0;
+    --line:rgba(234,242,241,.12); --line-strong:rgba(234,242,241,.22);
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--amber);color:var(--bg)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.08}
+  em{font-style:italic;color:var(--amber)}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:18px}
+  section{padding:120px 0;border-top:1px solid var(--line)}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:60px}
+  .section-head h2{font-size:clamp(34px,5vw,56px);max-width:680px}
+  .section-head p{color:var(--muted);max-width:380px;font-size:15.5px}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:20px 0;transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent}
+  nav.scrolled{background:rgba(11,27,36,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 0;border-color:var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .logo{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.08em;display:flex;align-items:center;gap:10px}
+  .logo .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 12px var(--amber)}
+  .navlinks{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+  .navlinks a:hover{color:var(--text)}
+  .nav-cta{font-size:13px;padding:9px 16px;border:1px solid var(--line-strong);border-radius:30px;transition:.25s;white-space:nowrap}
+  .nav-cta:hover{border-color:var(--amber);color:var(--amber)}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:40px;font-size:14.5px;font-weight:500;transition:.25s}
+  .btn-primary{background:var(--amber);color:var(--bg)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--amber)}
+  .btn-ghost{border:1px solid var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--text)}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;padding:140px 0 80px;position:relative;border:none}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(700px 460px at 80% 35%,rgba(79,173,160,.15),transparent 70%),
+    radial-gradient(520px 380px at 8% 92%,rgba(227,162,59,.09),transparent 70%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center;position:relative}
+  .hero h1{font-size:clamp(40px,5.8vw,76px);margin-bottom:26px}
+  .lede{font-size:18px;color:var(--muted);max-width:540px;margin-bottom:36px}
+  .lede b{color:var(--text);font-weight:500}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .portrait{position:relative;justify-self:end;width:100%;max-width:420px}
+  .portrait .frame{border-radius:22px;overflow:hidden;border:1px solid var(--line-strong);aspect-ratio:4/5;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+  .portrait .frame img{width:100%;height:100%;object-fit:cover}
+  .badge{position:absolute;background:rgba(16,36,48,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line-strong);border-radius:14px;padding:12px 16px;font-size:13px;line-height:1.35;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+  .badge b{display:block;font-family:'Fraunces',serif;font-weight:400;font-size:22px;color:var(--amber)}
+  .badge.b-1{left:-40px;bottom:70px}
+  .badge.b-2{right:-24px;top:40px}
+  .badge .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3DDC84;box-shadow:0 0 10px #3DDC84;margin-right:6px;vertical-align:1px}
+
+  /* CLIENT STRIP */
+  .clients{padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .clients .wrap{display:flex;align-items:center;gap:56px;flex-wrap:wrap}
+  .clients .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .clients ul{list-style:none;display:flex;gap:56px;flex-wrap:wrap;align-items:center}
+  .clients li{display:flex;align-items:center;opacity:.85;transition:opacity .25s}
+  .clients li:hover{opacity:1}
+  .clients img{height:34px;width:auto}
+  .clients .txt{font-family:'Fraunces',serif;font-size:24px}
+  .clients .txt span{color:#E9C98A}
+
+  /* NUMBERS */
+  .numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:70px}
+  .numbers div{padding:30px 26px;border-right:1px solid var(--line);background:var(--surface)}
+  .numbers div:last-child{border-right:none}
+  .numbers b{display:block;font-family:'Fraunces',serif;font-weight:400;font-size:42px;line-height:1;margin-bottom:10px;color:var(--text)}
+  .numbers span{font-size:14px;color:var(--muted)}
+
+  /* CASES */
+  .case{padding:110px 0;border-top:1px solid var(--line)}
+  .case-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:50px}
+  .case-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);margin-bottom:14px;letter-spacing:.06em}
+  .case h2{font-size:clamp(38px,5vw,62px);margin-bottom:10px}
+  .case .sub{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted)}
+  .case-top p.intro{font-size:17px;color:var(--muted)}
+  .case-top p.intro b{color:var(--text);font-weight:500}
+  .case-link{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--amber);border-bottom:1px solid var(--amber);padding-bottom:3px;margin-top:20px;transition:gap .25s}
+  .case-link:hover{gap:12px}
+
+  .browser{border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);background:var(--surface);box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+  .browser .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .browser .bar i{width:9px;height:9px;border-radius:50%;background:rgba(234,242,241,.18)}
+  .browser .bar span{margin-left:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .browser img{width:100%;height:auto;cursor:zoom-in}
+  figure figcaption{font-size:12.5px;color:var(--muted);margin-top:10px;font-family:'JetBrains Mono',monospace}
+
+  .gallery{display:grid;gap:22px;margin-bottom:60px}
+  .g-hero{grid-template-columns:1.55fr 1fr}
+  .g-half{grid-template-columns:1fr 1fr}
+  .g-col{display:grid;gap:22px;align-content:start}
+  .g-3{grid-template-columns:repeat(3,1fr)}
+  .photo{border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);position:relative;background:var(--surface)}
+  .photo img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+  .photo .cap{position:absolute;left:12px;bottom:12px;font-family:'JetBrains Mono',monospace;font-size:11px;background:rgba(11,27,36,.82);padding:5px 10px;border-radius:20px;backdrop-filter:blur(6px)}
+  .phone{border-radius:28px;border:6px solid #1d3a48;overflow:hidden;max-width:230px;justify-self:center;box-shadow:0 30px 60px -25px rgba(0,0,0,.7)}
+  .phone img{cursor:zoom-in}
+
+  .tours{background:var(--surface);border:1px solid var(--line-strong);border-radius:14px;overflow:hidden;align-self:stretch;display:flex;flex-direction:column}
+  .tours-head{display:flex;justify-content:space-between;gap:10px;padding:16px 20px;background:var(--surface-2);border-bottom:1px solid var(--line);font-size:14px}
+  .mono-s{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
+  .tours ul{list-style:none}
+  .tours-foot{margin-top:auto}
+  .tours li{display:flex;align-items:center;gap:14px;padding:13px 20px;border-bottom:1px solid var(--line)}
+  .tours .th{width:58px;height:44px;border-radius:8px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#155066,#0B1B24)}
+  .tours .th img{width:100%;height:100%;object-fit:cover}
+  .tours li > span:nth-child(2){flex:1;display:flex;flex-direction:column;line-height:1.3}
+  .tours b{font-family:'Fraunces',serif;font-weight:400;font-size:18px}
+  .tours small{font-size:12.5px;color:var(--muted)}
+  .tours .buy{font-size:12px;font-weight:500;background:var(--amber);color:var(--bg);padding:6px 12px;border-radius:20px}
+  .tours-foot{padding:14px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--teal)}
+  .story{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:60px}
+  .story > div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .story .k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+  .story p{color:var(--muted);font-size:15px}
+  .story p b{color:var(--text);font-weight:500}
+
+  .features-title{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:24px}
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:40px}
+  .feat{background:var(--bg);padding:28px 26px}
+  .feat h4{font-family:'Fraunces',serif;font-weight:400;font-size:21px;margin-bottom:10px;display:flex;gap:10px;align-items:baseline}
+  .feat h4 small{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber)}
+  .feat ul{list-style:none;display:grid;gap:7px}
+  .feat li{font-size:14.5px;color:var(--muted);padding-left:16px;position:relative}
+  .feat li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--teal);opacity:.7}
+
+  .highlight{display:flex;gap:18px;align-items:flex-start;background:linear-gradient(90deg,rgba(227,162,59,.10),rgba(227,162,59,.02));border:1px solid rgba(227,162,59,.3);border-radius:var(--radius);padding:24px 26px;margin-bottom:40px}
+  .highlight .ic{font-size:22px;line-height:1}
+  .highlight p{color:var(--muted);font-size:15px}
+  .highlight p b{color:var(--text);font-weight:500}
+
+  .stack-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .stack-row .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--teal);border:1px solid rgba(79,173,160,.35);background:rgba(79,173,160,.06);padding:6px 12px;border-radius:20px}
+
+  .note{font-size:12.5px;color:var(--muted);margin-top:18px;font-style:italic}
+
+  /* TRUST */
+  .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .trust > div{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+  .trust .n{font-family:'JetBrains Mono',monospace;color:var(--amber);font-size:12px;margin-bottom:26px}
+  .trust h3{font-size:23px;margin-bottom:10px}
+  .trust p{color:var(--muted);font-size:14.5px}
+
+  /* SERVICES */
+  .services{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .service{padding:34px 28px;border-right:1px solid var(--line);background:var(--surface);transition:background .3s}
+  .service:last-child{border-right:none}
+  .service:hover{background:var(--surface-2)}
+  .service .ic{font-family:'JetBrains Mono',monospace;color:var(--amber);font-size:13px;margin-bottom:36px}
+  .service h3{font-size:23px;margin-bottom:12px}
+  .service p{color:var(--muted);font-size:14.5px}
+  .service .ex{display:block;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--teal)}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;counter-reset:s;margin-top:80px}
+  .step{padding-top:24px;border-top:1px solid var(--line-strong)}
+  .step::before{counter-increment:s;content:"0" counter(s);font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal);display:block;margin-bottom:14px}
+  .step h3{font-size:22px;margin-bottom:10px}
+  .step p{color:var(--muted);font-size:14.5px}
+
+  /* CONTACT / ABOUT */
+  .contact{background:var(--surface)}
+  .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+  .me{position:sticky;top:110px}
+  .me .frame{border-radius:20px;overflow:hidden;border:1px solid var(--line-strong);aspect-ratio:1/1;margin-bottom:22px}
+  .me .frame img{width:100%;height:100%;object-fit:cover}
+  .me h3{font-size:28px;margin-bottom:4px}
+  .me .role{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:18px}
+  .me p{color:var(--muted);font-size:15px;margin-bottom:12px}
+  .me p b{color:var(--text);font-weight:500}
+  .contact h2{font-size:clamp(38px,5.4vw,66px);margin-bottom:22px}
+  .contact .lede{margin-bottom:44px}
+  .contact-list{display:flex;flex-direction:column}
+  .row{display:flex;align-items:center;gap:20px;padding:21px 0;border-top:1px solid var(--line);transition:padding-left .25s}
+  .row:last-child{border-bottom:1px solid var(--line)}
+  .row:hover{padding-left:10px}
+  .row .label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;width:110px;flex-shrink:0}
+  .row .value{font-size:18px;flex:1;word-break:break-all}
+  .row .arrow{color:var(--amber);opacity:0;transform:translateX(-6px);transition:.25s}
+  .row:hover .arrow{opacity:1;transform:none}
+
+  footer{padding:34px 0;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* WhatsApp float */
+  .wa{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -8px rgba(37,211,102,.6);transition:transform .25s}
+  .wa:hover{transform:scale(1.08)}
+  .wa svg{width:28px;height:28px;fill:#fff}
+
+  /* LIGHTBOX */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(5,12,16,.92);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+  .lb.open{display:flex}
+  .lb img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lb button{position:absolute;top:18px;right:22px;background:none;border:none;color:var(--text);font-size:34px;cursor:pointer;line-height:1}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* RESPONSIVE */
+  @media (max-width:1000px){
+    .hero-grid,.case-top,.contact-grid{grid-template-columns:1fr;gap:44px}
+    .portrait{justify-self:center;max-width:380px}
+    .badge.b-1{left:-14px}.badge.b-2{right:-10px}
+    .g-hero,.g-half{grid-template-columns:1fr}
+    .story,.trust{grid-template-columns:1fr}
+    .features{grid-template-columns:1fr 1fr}
+    .numbers{grid-template-columns:1fr 1fr}
+    .numbers div:nth-child(2){border-right:none}
+    .numbers div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .services{grid-template-columns:1fr 1fr}
+    .service:nth-child(2){border-right:none}
+    .service:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .steps{grid-template-columns:1fr 1fr}
+    .me{position:relative;top:0;max-width:420px}
+  }
+  @media (max-width:640px){
+    section,.case{padding:80px 0}
+    .navlinks{display:none}
+    .features,.services,.steps,.g-3{grid-template-columns:1fr}
+    .service{border-right:none;border-bottom:1px solid var(--line)}
+    .service:last-child{border-bottom:none}
+    .numbers b{font-size:34px}
+    .row .label{width:80px}
+    .row .value{font-size:15px}
+    .clients .wrap,.clients ul{gap:30px}
+    .badge{font-size:12px;padding:10px 12px}.badge b{font-size:18px}
+    .badge.b-1{left:-6px;bottom:30px}.badge.b-2{right:-6px;top:20px}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#" class="logo"><span class="dot"></span>LEONARDO.BARCOS</a>
+    <div class="navlinks">
+      <a href="#cases">Cases</a>
+      <a href="#confianca">Por que eu</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Sobre</a>
+    </div>
+    <a href="#contato" class="nav-cta">Fale comigo</a>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Desenvolvedor web · Belém do Pará</div>
+        <h1>Sistemas que fazem negócios <em>reais</em> venderem online.</h1>
+        <p class="lede">Sou o Leonardo. Construo <b>sites com reserva e pagamento online</b> e os <b>painéis que a equipe usa no dia a dia</b>, sempre do zero até estarem no ar. Hoje um iate, um hotel e uma associação de criativos do Pará funcionam com sistemas que eu desenvolvi.</p>
+        <div class="cta-row">
+          <a href="#cases" class="btn btn-primary">Ver os cases ↓</a>
+          <a href="https://wa.me/5591981225503?text=Ol%C3%A1%20Leonardo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="btn btn-ghost">Pedir orçamento</a>
+        </div>
+      </div>
+      <div class="portrait reveal">
+        <div class="frame"><img src="img/leonardo.webp" alt="Leonardo Jacomini Barcos, desenvolvedor web" width="640" height="800"></div>
+        <div class="badge b-2"><span class="live"></span>3 sistemas em produção</div>
+        <div class="badge b-1"><b>Ponta a ponta</b>design · código · deploy</div>
+      </div>
+    </div>
+
+    <div class="numbers reveal">
+      <div><b>3</b><span>clientes com sistema no ar</span></div>
+      <div><b>2</b><span>gateways de pagamento integrados (Mercado Pago e Asaas)</span></div>
+      <div><b>90</b><span>apartamentos geridos pelo painel do hotel</span></div>
+      <div><b>152</b><span>testes automatizados no sistema da CCPA</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="clients">
+  <div class="wrap">
+    <span class="lbl">Clientes</span>
+    <ul>
+      <li><img src="https://www.iateborari.com.br/img/logo-borari-branca.svg" alt="Iate Borarí" onerror="this.outerHTML='<span class=txt>Iate Borarí</span>'"></li>
+      <li><span class="txt">Gold <span>Martan</span></span></li>
+      <li><img src="img/logo-ccpa.png" alt="Clube de Criativos do Pará" style="height:50px"></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================ CASES ============================ -->
+<div id="cases"></div>
+
+<!-- ---------- 01 · IATE BORARÍ ---------- -->
+<article class="case">
+  <div class="wrap">
+    <div class="case-top reveal">
+      <div>
+        <div class="case-num">CASE 01 · TURISMO NÁUTICO</div>
+        <h2>Iate Borarí</h2>
+        <div class="sub">iateborari.com.br · Belém, PA</div>
+      </div>
+      <div>
+        <p class="intro">O <b>único trimarã que navega em Belém</b>, com três conveses e passeios pela Baía do Guajará. Fiz a plataforma onde o público escolhe a data, compra o ingresso e recebe a confirmação na hora, sem precisar chamar ninguém.</p>
+        <a class="case-link" href="https://www.iateborari.com.br" target="_blank" rel="noopener">Visitar o site ↗</a>
+      </div>
+    </div>
+
+    <div class="gallery g-half reveal">
+      <div class="photo" style="aspect-ratio:4/5"><img src="img/borari-barco.webp" alt="Iate Borarí navegando ao pôr do sol na Baía do Guajará" loading="lazy" width="900" height="1200"><span class="cap">O Iate Borarí na Baía do Guajará</span></div>
+      <div class="tours">
+        <div class="tours-head"><span>Passeios à venda no site</span><span class="mono-s">iateborari.com.br</span></div>
+        <ul><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1783541119269-cfaizp.jpg" alt="Pôr do Sol" loading="lazy" onerror="this.remove()"></span><span><b>Pôr do Sol</b><small>Sábados · 17h</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1783541124311-xepldc.jpg" alt="Sunset" loading="lazy" onerror="this.remove()"></span><span><b>Sunset</b><small>Domingos · 16h</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1793198325056-brwl76.jpg" alt="Navegando com Deus" loading="lazy" onerror="this.remove()"></span><span><b>Navegando com Deus</b><small>Domingos · 13h</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1793967186568-gxqi1h.jpg" alt="Céu de Estrelas" loading="lazy" onerror="this.remove()"></span><span><b>Céu de Estrelas</b><small>Planetário a bordo</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1793198295746-qajy0z.jpg" alt="Lua Cheia" loading="lazy" onerror="this.remove()"></span><span><b>Lua Cheia</b><small>Comida e bebida inclusas</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1792418953742-bl8qy2.jpg" alt="Réveillon a Bordo" loading="lazy" onerror="this.remove()"></span><span><b>Réveillon a Bordo</b><small>Jantar, bebidas e DJ</small></span><span class="buy">Comprar</span></li></ul>
+        <div class="tours-foot">Rotina semanal + datas especiais · vagas limitadas por faixa de preço · confirmação na hora</div>
+      </div>
+    </div>
+
+    <div class="story reveal">
+      <div><div class="k">O problema</div><p>As vendas aconteciam quase todas pelo WhatsApp: <b>atendimento manual</b> a cada interessado, vagas controladas na mão e reservas que se perdiam no meio da conversa.</p></div>
+      <div><div class="k">O que eu fiz</div><p>Uma <b>loja online de passeios</b> com calendário, faixas de preço com vagas limitadas, pagamento online e uma área onde o cliente vê os ingressos que comprou. A equipe cadastra passeios e fotos sem depender de mim.</p></div>
+      <div><div class="k">O resultado</div><p>O site virou <b>o principal canal de venda</b> do iate. Cada passeio, do pôr do sol de sábado ao Réveillon a Bordo, tem página própria e vagas atualizadas na hora.</p></div>
+    </div>
+
+    <div class="features-title reveal">O que o sistema faz</div>
+    <div class="features reveal">
+      <div class="feat"><h4><small>01</small>Venda de ingressos</h4><ul><li>Passeios fixos da semana e datas especiais</li><li>Escolha pelo calendário</li><li>Faixas de preço, cada uma com suas vagas</li><li>Pagamento online com confirmação na hora</li></ul></div>
+      <div class="feat"><h4><small>02</small>Experiência do cliente</h4><ul><li>Abertura com vídeo do passeio</li><li>Área "Meus ingressos"</li><li>Depoimentos, perguntas frequentes e local de embarque</li><li>WhatsApp direto para fretar o barco em eventos privados</li></ul></div>
+      <div class="feat"><h4><small>03</small>Gestão e integração</h4><ul><li>Painel para cadastrar passeios, fotos e preços</li><li>Valor de repasse definido por passeio</li><li>API que o Hotel Gold Martan usa para vender pacotes</li><li>SEO e prévia bonita do link ao compartilhar</li></ul></div>
+    </div>
+
+    <div class="stack-row reveal">
+      <span class="lbl">Tecnologias</span>
+      <span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Supabase (PostgreSQL + Storage)</span><span class="tag">Mercado Pago</span><span class="tag">API REST</span><span class="tag">Vercel</span>
+    </div>
+  </div>
+</article>
+
+<!-- ---------- 02 · HOTEL GOLD MARTAN ---------- -->
+<article class="case">
+  <div class="wrap">
+    <div class="case-top reveal">
+      <div>
+        <div class="case-num">CASE 02 · HOTELARIA</div>
+        <h2>Hotel Gold Martan</h2>
+        <div class="sub">hotelgoldmartan.com.br · Belém, PA</div>
+      </div>
+      <div>
+        <p class="intro">Hotel com <b>90 apartamentos</b>, duas piscinas e restaurante 24h, a 10 minutos do Mangueirão. Entreguei <b>três sistemas em um</b>: o site, um motor de reservas próprio com pagamento online e o painel que recepção, governança e camareiras usam o dia inteiro.</p>
+        <a class="case-link" href="https://www.hotelgoldmartan.com.br" target="_blank" rel="noopener">Visitar o site ↗</a>
+      </div>
+    </div>
+
+    <div class="gallery g-hero reveal">
+      <figure>
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span>hotelgoldmartan.com.br</span></div><img src="img/hotel-site.webp" alt="Página inicial do site do Hotel Gold Martan" loading="lazy" width="1440" height="900"></div>
+        <figcaption>Página inicial: o botão de reserva fica sempre visível</figcaption>
+      </figure>
+      <div class="g-col">
+        <div class="photo" style="aspect-ratio:16/10"><img src="img/hotel-piscina.webp" alt="Área da piscina do Hotel Gold Martan" loading="lazy"><span class="cap">Fotos reais do hotel</span></div>
+        <div class="photo" style="aspect-ratio:16/10"><img src="img/hotel-fachada.webp" alt="Fachada do Hotel Gold Martan" loading="lazy" style="object-position:center 30%"><span class="cap">Fachada · Av. Mário Covas</span></div>
+      </div>
+    </div>
+
+    <div class="story reveal">
+      <div><div class="k">O problema</div><p>Boa parte das diárias chegava por <b>plataformas que cobram comissão</b>, e o hotel não tinha uma ferramenta própria para acompanhar, em tempo real, o estado de cada quarto.</p></div>
+      <div><div class="k">O que eu fiz</div><p>Um site rápido e pensado para o Google, um <b>motor de reservas próprio</b> com Pix e cartão e um <b>painel da equipe</b> em que cada função vê só o que precisa.</p></div>
+      <div><div class="k">O resultado</div><p>O hotel <b>vende diárias direto</b>, sem intermediário, e a equipe acompanha o estado de todos os quartos em tempo real, no computador ou no celular.</p></div>
+    </div>
+
+    <div class="gallery g-3 reveal">
+      <figure><div class="browser"><div class="bar"><i></i><i></i><i></i><span>/reservar</span></div><img src="img/hotel-reserva.webp" alt="Busca de disponibilidade do motor de reservas" loading="lazy"></div><figcaption>Motor de reservas: busca por datas e pessoas</figcaption></figure>
+      <figure><div class="browser"><div class="bar"><i></i><i></i><i></i><span>/painel/quartos</span></div><img src="img/hotel-painel-quartos.webp" alt="Painel com a grade de quartos por andar" loading="lazy"></div><figcaption>Painel: estado de cada quarto, andar por andar</figcaption></figure>
+      <figure><div class="browser"><div class="bar"><i></i><i></i><i></i><span>/painel/tarifas</span></div><img src="img/hotel-tarifas.webp" alt="Painel de tarifas por andar" loading="lazy"></div><figcaption>Tarifas por andar e por pessoa a mais</figcaption></figure>
+    </div>
+
+    <div class="features-title reveal">O que o sistema faz</div>
+    <div class="features reveal">
+      <div class="feat"><h4><small>01</small>Site e Google</h4><ul><li>Páginas de hotel, quartos, restaurante, eventos e passeio</li><li>Dados estruturados para o Google, sitemap e páginas leves</li><li>Blog que a equipe edita pelo painel</li><li>Formulários de contato e eventos que caem direto no painel</li></ul></div>
+      <div class="feat"><h4><small>02</small>Reserva direta</h4><ul><li>Busca de disponibilidade em tempo real</li><li>Preço por tarifa, andar e pessoa a mais</li><li>Pagamento por Pix e cartão (Mercado Pago)</li><li>Confirmação automática quando o pagamento entra</li><li>Reservas de grupo e cota de quartos reservada para o site</li></ul></div>
+      <div class="feat"><h4><small>03</small>Painel da equipe</h4><ul><li>Perfis de recepção, governança, camareira e administração</li><li>Check-in, check-out, limpeza e interdição de quartos</li><li>Achados e perdidos com termo impresso</li><li>Gestão da equipe e das mensagens do site</li></ul></div>
+    </div>
+
+    <div class="highlight reveal">
+      <div class="ic">⚓</div>
+      <p><b>Dois clientes, um pacote só.</b> O sistema do hotel conversa com o do Iate Borarí: o hóspede compra a diária e o passeio de barco na mesma reserva, e o hotel repassa automaticamente o valor de cada ingresso. Se o site do iate ficar fora do ar, o hotel <b>continua vendendo diárias normalmente</b>.</p>
+    </div>
+
+    <div class="stack-row reveal">
+      <span class="lbl">Tecnologias</span>
+      <span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">PostgreSQL (Supabase)</span><span class="tag">Mercado Pago</span><span class="tag">Resend</span><span class="tag">Vercel</span>
+    </div>
+    <p class="note reveal">As telas do painel aparecem com dados de demonstração, para proteger as informações do hotel e dos hóspedes.</p>
+  </div>
+</article>
+
+<!-- ---------- 03 · CCPA ---------- -->
+<article class="case">
+  <div class="wrap">
+    <div class="case-top reveal">
+      <div>
+        <div class="case-num">CASE 03 · ASSOCIAÇÃO</div>
+        <h2>Clube de Criativos do Pará</h2>
+        <div class="sub">associados.ccpara.com.br · CCPA</div>
+      </div>
+      <div>
+        <p class="intro">Associação sem fins lucrativos que reúne <b>estudantes, profissionais e empresas</b> da economia criativa paraense, com regionais em Belém, Santarém, Paragominas e Canaã dos Carajás. Fiz a plataforma de adesão com <b>cobrança recorrente automática</b> e o painel de gestão da diretoria.</p>
+        <a class="case-link" href="https://associados.ccpara.com.br" target="_blank" rel="noopener">Visitar o site ↗</a>
+      </div>
+    </div>
+
+    <div class="gallery g-hero reveal">
+      <figure>
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span>associados.ccpara.com.br</span></div><img src="img/ccpa-site.webp" alt="Página de adesão do Clube de Criativos do Pará" loading="lazy"></div>
+        <figcaption>Página de adesão: benefícios, planos e cadastro</figcaption>
+      </figure>
+      <div class="g-col" style="grid-template-columns:1fr 1fr;align-items:start">
+        <div class="phone"><img src="img/ccpa-celular.webp" alt="Página de adesão no celular" loading="lazy"></div>
+        <div class="photo" style="aspect-ratio:auto"><img src="img/ccpa-email.webp" alt="E-mail automático de boas-vindas" loading="lazy" style="height:auto"></div>
+        <figcaption style="grid-column:1/-1;font-size:12.5px;color:var(--muted);font-family:'JetBrains Mono',monospace">No celular, e o e-mail de boas-vindas com o link de pagamento</figcaption>
+      </div>
+    </div>
+
+    <div class="story reveal">
+      <div><div class="k">O problema</div><p>A associação precisava receber novos membros pela internet e <b>cobrar mensalidades sem depender de cobrança manual</b>, sabendo sempre quem está em dia e quanto entra por mês.</p></div>
+      <div><div class="k">O que eu fiz</div><p>Um cadastro para pessoa física e empresa, com <b>assinatura mensal ou anual</b> cobrada sozinha no cartão ou no Pix Automático, e um painel com receita, inadimplência e cobrança pelo WhatsApp.</p></div>
+      <div><div class="k">O resultado</div><p>A pessoa <b>se associa sozinha em poucos minutos</b> e a renovação acontece sem ninguém precisar cobrar. A diretoria acompanha tudo em números.</p></div>
+    </div>
+
+    <figure class="reveal" style="margin-bottom:60px">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>/painel · Visão geral</span></div><img src="img/ccpa-painel.webp" alt="Painel de gestão do CCPA com receita, inadimplência e gráficos" loading="lazy"></div>
+      <figcaption>Painel de gestão: associados ativos, receita recorrente, conversão e gráficos dos últimos 12 meses</figcaption>
+    </figure>
+
+    <div class="features-title reveal">O que o sistema faz</div>
+    <div class="features reveal">
+      <div class="feat"><h4><small>01</small>Adesão e cobrança</h4><ul><li>Planos Estudante, Profissional e Empresa</li><li>Mensal ou anual (no anual, 12 meses pelo preço de 11)</li><li>Cartão com renovação automática via Asaas</li><li>Pix Automático: um QR Code autoriza todas as cobranças seguintes</li><li>E-mails automáticos de boas-vindas e de confirmação</li></ul></div>
+      <div class="feat"><h4><small>02</small>Painel da diretoria</h4><ul><li>Receita recorrente, recebido no mês e taxa de conversão</li><li>Associados por plano e por regional</li><li>Cobrança pelo WhatsApp com mensagem pronta</li><li>Conferência automática com o banco, para não perder nenhum pagamento</li><li>Planilha exportável que abre certinho no Excel</li></ul></div>
+      <div class="feat"><h4><small>03</small>Segurança e LGPD</h4><ul><li>O cartão nunca passa pelo sistema: é cadastrado na página segura do banco</li><li>Registro do aceite dos termos com data e IP</li><li>Histórico de quem abriu a ficha de cada associado</li><li>Bloqueio após tentativas de senha erradas e proteção dos formulários</li><li>152 testes automatizados</li></ul></div>
+    </div>
+
+    <div class="gallery g-3 reveal" style="margin-bottom:40px;align-items:start">
+      <div class="photo" style="grid-column:span 2;aspect-ratio:auto"><img src="img/ccpa-planos.webp" alt="Escolha de plano mensal ou anual" loading="lazy" style="height:auto"><span class="cap">Escolha de plano mensal ou anual</span></div>
+      <div class="photo" style="aspect-ratio:auto"><img src="img/ccpa-sucesso.webp" alt="Tela de confirmação do cadastro" loading="lazy" style="height:auto"><span class="cap">Confirmação</span></div>
+    </div>
+
+    <div class="stack-row reveal">
+      <span class="lbl">Tecnologias</span>
+      <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">PostgreSQL</span><span class="tag">Pydantic</span><span class="tag">Asaas</span><span class="tag">Pix Automático</span><span class="tag">Resend</span><span class="tag">Vercel</span>
+    </div>
+    <p class="note reveal">O painel aparece com dados fictícios, para proteger as informações dos associados.</p>
+  </div>
+</article>
+
+<!-- ============================ CONFIANÇA ============================ -->
+<section id="confianca">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">Por que trabalhar comigo</div>
+        <h2>Feito para funcionar todo dia, não só na apresentação.</h2>
+      </div>
+      <p>Os três cases acima estão em uso agora, vendendo e sendo usados por equipes de verdade.</p>
+    </div>
+    <div class="trust reveal">
+      <div><div class="n">/ 01</div><h3>Entendo a operação</h3><p>Trabalho com TI dentro de um hotel. Antes de programar, vejo como a recepção, a camareira e o financeiro trabalham de fato.</p></div>
+      <div><div class="n">/ 02</div><h3>Pagamento seguro</h3><p>Integro Pix e cartão por empresas reguladas (Mercado Pago e Asaas). Os dados do cartão do seu cliente nunca ficam no sistema.</p></div>
+      <div><div class="n">/ 03</div><h3>LGPD levada a sério</h3><p>Registro de consentimento, controle de quem acessa cada dado e perfis de acesso por função.</p></div>
+      <div><div class="n">/ 04</div><h3>Você é o dono</h3><p>Domínio, código e conta de hospedagem ficam no seu nome. Nada de ficar refém de quem fez o site.</p></div>
+      <div><div class="n">/ 05</div><h3>Autonomia para a equipe</h3><p>Fotos, preços, textos e passeios são alterados pelo painel, sem precisar me chamar para cada mudança.</p></div>
+      <div><div class="n">/ 06</div><h3>Suporte de perto</h3><p>Estou em Belém. Depois da entrega, continuo acompanhando, ajustando e evoluindo o sistema com você.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVIÇOS ============================ -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">O que eu faço</div>
+        <h2>Do primeiro rascunho ao sistema no ar.</h2>
+      </div>
+      <p>Do começo ao fim você fala com uma pessoa só, sem intermediário e sem termos técnicos.</p>
+    </div>
+    <div class="services reveal">
+      <div class="service"><div class="ic">/ 01</div><h3>Sites profissionais</h3><p>Para sua empresa ser encontrada no Google e passar confiança logo no primeiro clique.</p><span class="ex">ex.: Hotel Gold Martan</span></div>
+      <div class="service"><div class="ic">/ 02</div><h3>Reservas e vendas online</h3><p>Ingressos, diárias e agendamentos com pagamento por Pix e cartão.</p><span class="ex">ex.: Iate Borarí</span></div>
+      <div class="service"><div class="ic">/ 03</div><h3>Assinaturas e cobrança</h3><p>Mensalidades e planos recorrentes que se cobram sozinhos.</p><span class="ex">ex.: CCPA</span></div>
+      <div class="service"><div class="ic">/ 04</div><h3>Painéis de gestão</h3><p>Sistemas internos para a equipe, com números e permissões por função.</p><span class="ex">ex.: painel do hotel</span></div>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step"><h3>Conversa</h3><p>Entendo seu negócio, seus clientes e o que o sistema precisa resolver.</p></div>
+      <div class="step"><h3>Proposta</h3><p>Escopo, prazo e valor por escrito, antes de começar.</p></div>
+      <div class="step"><h3>Desenvolvimento</h3><p>Você acompanha cada etapa e aprova o visual antes da entrega.</p></div>
+      <div class="step"><h3>No ar</h3><p>Publico no seu domínio, treino a equipe e continuo dando suporte.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SOBRE + CONTATO ============================ -->
+<section id="contato" class="contact">
+  <div class="wrap contact-grid">
+    <aside class="me reveal">
+      <div class="frame"><img src="img/leonardo-rosto.webp" alt="Foto de Leonardo Jacomini Barcos" loading="lazy" width="410" height="410"></div>
+      <h3>Leonardo Jacomini Barcos</h3>
+      <div class="role">Desenvolvedor web · Belém, PA</div>
+      <p>Estudo <b>Ciência da Computação no IFPA</b> e trabalho com <b>infraestrutura de TI em hotelaria</b>. Gosto de pegar um problema concreto de um negócio e só parar quando ele estiver resolvido e funcionando.</p>
+      <p>Se a sua empresa ainda não vende online, ou tem um site que não traz resultado, é esse o tipo de projeto que eu quero fazer com você.</p>
+    </aside>
+    <div class="reveal">
+      <div class="eyebrow">Próximo case</div>
+      <h2>Vamos colocar seu negócio <em>no ar?</em></h2>
+      <p class="lede">Me chama no WhatsApp. Respondo rápido, e a primeira conversa é sem compromisso.</p>
+      <div class="contact-list">
+        <a class="row" href="https://wa.me/5591981225503?text=Ol%C3%A1%20Leonardo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><span class="label">WhatsApp</span><span class="value">(91) 98122-5503</span><span class="arrow">→</span></a>
+        <a class="row" href="mailto:leonardojacominibarcos@gmail.com"><span class="label">E-mail</span><span class="value">leonardojacominibarcos@gmail.com</span><span class="arrow">→</span></a>
+        <a class="row" href="https://www.linkedin.com/in/leonardo-barcos" target="_blank" rel="noopener"><span class="label">LinkedIn</span><span class="value">/in/leonardo-barcos</span><span class="arrow">→</span></a>
+        <a class="row" href="https://instagram.com/leo_barcos_" target="_blank" rel="noopener"><span class="label">Instagram</span><span class="value">@leo_barcos_</span><span class="arrow">→</span></a>
+        <a class="row" href="https://github.com/Leonardo-Barcos" target="_blank" rel="noopener"><span class="label">GitHub</span><span class="value">Leonardo-Barcos</span><span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Leonardo Jacomini Barcos</span>
+    <span>Belém, Pará, Brasil</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5591981225503?text=Ol%C3%A1%20Leonardo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3.2 29l7.3-1.9c1.8 1 3.9 1.5 5.9 1.5 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.3 1.1 1.2-4.2-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.5C5.2 9.8 10 5 16 5s10.8 4.8 10.8 10.6S21.9 26.2 16 26.2zm5.9-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-label="Imagem ampliada"><button aria-label="Fechar">×</button><img alt=""></div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+
+  // Ampliar capturas de tela e fotos ao clicar
+  const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('.browser img, .photo img, .phone img').forEach(img => {
+    img.addEventListener('click', () => { lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt; lb.classList.add('open'); });
+  });
+  const close = () => lb.classList.remove('open');
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+</script>
+</body>
+</html>
