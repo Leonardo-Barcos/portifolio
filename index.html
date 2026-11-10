@@ -6,13 +6,13 @@
 <title>Leonardo Barcos — Desenvolvedor Web · Belém, PA</title>
 <meta name="description" content="Desenvolvedor web em Belém do Pará. Sistemas de reserva, pagamentos online e painéis de gestão para negócios reais: Iate Borarí, Hotel Gold Martan e Clube de Criativos do Pará.">
 <meta name="theme-color" content="#0B1B24">
-<!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn). Troque SEU-DOMINIO quando tiver o domínio. -->
+<!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn). Domínio: www.leonardobarcos.dev -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Leonardo Barcos — Desenvolvedor Web em Belém">
 <meta property="og:description" content="Sites e sistemas que vendem: reservas, pagamentos online e painéis de gestão. Cases: Iate Borarí, Hotel Gold Martan e CCPA.">
-<meta property="og:url" content="https://SEU-DOMINIO.com.br">
-<meta property="og:image" content="https://SEU-DOMINIO.com.br/img/leonardo.webp">
+<meta property="og:url" content="https://www.leonardobarcos.dev">
+<meta property="og:image" content="https://www.leonardobarcos.dev/img/leonardo.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1B24'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='30' fill='%23E3A23B'%3ELB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,6 +137,14 @@
   .tours small{font-size:12.5px;color:var(--muted)}
   .tours .buy{font-size:12px;font-weight:500;background:var(--amber);color:var(--bg);padding:6px 12px;border-radius:20px}
   .tours-foot{padding:14px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--teal)}
+  .cap-p{grid-column:1/-1;font-size:12.5px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+  .flow{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;margin-bottom:60px}
+  .flow-steps{display:grid;gap:14px}
+  .flow-steps > div{display:grid;grid-template-columns:44px 1fr;column-gap:16px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+  .flow-steps span{grid-row:span 2;width:40px;height:40px;border-radius:50%;background:rgba(227,162,59,.14);color:var(--amber);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:19px}
+  .flow-steps h4{font-family:'Fraunces',serif;font-weight:400;font-size:20px;line-height:1.2}
+  .flow-steps p{color:var(--muted);font-size:14.5px}
+  .flow-img{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
   .story{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:60px}
   .story > div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
   .story .k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
@@ -232,7 +240,7 @@
     .hero-grid,.case-top,.contact-grid{grid-template-columns:1fr;gap:44px}
     .portrait{justify-self:center;max-width:380px}
     .badge.b-1{left:-14px}.badge.b-2{right:-10px}
-    .g-hero,.g-half{grid-template-columns:1fr}
+    .g-hero,.g-half,.flow{grid-template-columns:1fr}
     .story,.trust{grid-template-columns:1fr}
     .features{grid-template-columns:1fr 1fr}
     .numbers{grid-template-columns:1fr 1fr}
@@ -247,7 +255,7 @@
   @media (max-width:640px){
     section,.case{padding:80px 0}
     .navlinks{display:none}
-    .features,.services,.steps,.g-3{grid-template-columns:1fr}
+    .features,.services,.steps,.g-3,.flow-img{grid-template-columns:1fr}
     .service{border-right:none;border-bottom:1px solid var(--line)}
     .service:last-child{border-bottom:none}
     .numbers b{font-size:34px}
@@ -301,7 +309,7 @@
 
     <div class="numbers reveal">
       <div><b>3</b><span>clientes com sistema no ar</span></div>
-      <div><b>2</b><span>gateways de pagamento integrados (Mercado Pago e Asaas)</span></div>
+      <div><b>6</b><span>perfis de acesso no sistema do Iate Borarí, do sócio à cozinha</span></div>
       <div><b>90</b><span>apartamentos geridos pelo painel do hotel</span></div>
       <div><b>152</b><span>testes automatizados no sistema da CCPA</span></div>
     </div>
@@ -332,37 +340,73 @@
         <div class="sub">iateborari.com.br · Belém, PA</div>
       </div>
       <div>
-        <p class="intro">O <b>único trimarã que navega em Belém</b>, com três conveses e passeios pela Baía do Guajará. Fiz a plataforma onde o público escolhe a data, compra o ingresso e recebe a confirmação na hora, sem precisar chamar ninguém.</p>
+        <p class="intro">O <b>único trimarã que navega em Belém</b>, com passeios semanais pela Baía do Guajará. Fiz o <b>sistema completo da empresa</b>: o site onde o público compra, o ingresso com QR code e o painel que organiza venda, embarque, cozinha, financeiro e equipe de vendedores.</p>
         <a class="case-link" href="https://www.iateborari.com.br" target="_blank" rel="noopener">Visitar o site ↗</a>
       </div>
     </div>
 
-    <div class="gallery g-half reveal">
-      <div class="photo" style="aspect-ratio:4/5"><img src="img/borari-barco.webp" alt="Iate Borarí navegando ao pôr do sol na Baía do Guajará" loading="lazy" width="900" height="1200"><span class="cap">O Iate Borarí na Baía do Guajará</span></div>
-      <div class="tours">
-        <div class="tours-head"><span>Passeios à venda no site</span><span class="mono-s">iateborari.com.br</span></div>
-        <ul><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1783541119269-cfaizp.jpg" alt="Pôr do Sol" loading="lazy" onerror="this.remove()"></span><span><b>Pôr do Sol</b><small>Sábados · 17h</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1783541124311-xepldc.jpg" alt="Sunset" loading="lazy" onerror="this.remove()"></span><span><b>Sunset</b><small>Domingos · 16h</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1793198325056-brwl76.jpg" alt="Navegando com Deus" loading="lazy" onerror="this.remove()"></span><span><b>Navegando com Deus</b><small>Domingos · 13h</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1793967186568-gxqi1h.jpg" alt="Céu de Estrelas" loading="lazy" onerror="this.remove()"></span><span><b>Céu de Estrelas</b><small>Planetário a bordo</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1793198295746-qajy0z.jpg" alt="Lua Cheia" loading="lazy" onerror="this.remove()"></span><span><b>Lua Cheia</b><small>Comida e bebida inclusas</small></span><span class="buy">Comprar</span></li><li><span class="th"><img src="https://kaalxeraaywijpdilnla.supabase.co/storage/v1/object/public/passeios/passeio-1792418953742-bl8qy2.jpg" alt="Réveillon a Bordo" loading="lazy" onerror="this.remove()"></span><span><b>Réveillon a Bordo</b><small>Jantar, bebidas e DJ</small></span><span class="buy">Comprar</span></li></ul>
-        <div class="tours-foot">Rotina semanal + datas especiais · vagas limitadas por faixa de preço · confirmação na hora</div>
+    <div class="gallery g-hero reveal">
+      <figure>
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span>iateborari.com.br</span></div><img src="img/borari-site.webp" alt="Página inicial do site do Iate Borarí" loading="lazy" width="1440" height="900"></div>
+        <figcaption>Site com vídeo do passeio e compra direto pelo botão</figcaption>
+      </figure>
+      <div class="g-col" style="grid-template-columns:1fr 1fr;align-items:start">
+        <div class="phone"><img src="img/borari-popup-mobile.webp" alt="Escolha de passeio no celular" loading="lazy"></div>
+        <div class="phone"><img src="img/borari-ingresso.webp" alt="Ingresso digital no celular" loading="lazy"></div>
+        <p class="cap-p">No celular: escolha do passeio e o ingresso confirmado</p>
       </div>
     </div>
 
     <div class="story reveal">
-      <div><div class="k">O problema</div><p>As vendas aconteciam quase todas pelo WhatsApp: <b>atendimento manual</b> a cada interessado, vagas controladas na mão e reservas que se perdiam no meio da conversa.</p></div>
-      <div><div class="k">O que eu fiz</div><p>Uma <b>loja online de passeios</b> com calendário, faixas de preço com vagas limitadas, pagamento online e uma área onde o cliente vê os ingressos que comprou. A equipe cadastra passeios e fotos sem depender de mim.</p></div>
-      <div><div class="k">O resultado</div><p>O site virou <b>o principal canal de venda</b> do iate. Cada passeio, do pôr do sol de sábado ao Réveillon a Bordo, tem página própria e vagas atualizadas na hora.</p></div>
+      <div><div class="k">O problema</div><p>As vendas dependiam do WhatsApp e de anotações: <b>vagas controladas na mão</b>, conferência de nomes no embarque e nenhuma visão clara de quanto cada saída realmente rendia.</p></div>
+      <div><div class="k">O que eu fiz</div><p>Um sistema único em que <b>site, Instagram e vendedores vendem do mesmo estoque de vagas</b>, cada passageiro recebe um QR code e o painel mostra faturamento, despesas e lucro de cada saída.</p></div>
+      <div><div class="k">O resultado</div><p>O cliente compra sozinho, a qualquer hora. A equipe <b>embarca lendo QR code no celular</b>, e os sócios acompanham vendas, comissões e lucro de cada passeio sem planilha.</p></div>
+    </div>
+
+    <div class="features-title reveal">Do clique ao embarque</div>
+    <div class="flow reveal">
+      <div class="flow-steps">
+        <div><span>1</span><h4>Escolhe o passeio</h4><p>No site, pelo calendário ou conversando com a IA no Instagram.</p></div>
+        <div><span>2</span><h4>Paga online</h4><p>Pix ou cartão pelo Mercado Pago. A vaga fica reservada por 15 minutos enquanto paga.</p></div>
+        <div><span>3</span><h4>Recebe o ingresso</h4><p>E-mail com um QR code para cada passageiro, que também fica disponível em "Já comprei".</p></div>
+        <div><span>4</span><h4>Embarca</h4><p>A equipe lê o QR pela câmera do celular e a lista de embarque se atualiza na hora.</p></div>
+      </div>
+      <div class="flow-img">
+        <div class="photo" style="aspect-ratio:4/5"><img src="img/borari-barco.webp" alt="Iate Borarí navegando ao pôr do sol na Baía do Guajará" loading="lazy"><span class="cap">O Iate Borarí na Baía do Guajará</span></div>
+        <div class="phone" style="max-width:190px"><img src="img/borari-qr.webp" alt="QR codes dos ingressos" loading="lazy"></div>
+      </div>
+    </div>
+
+    <figure class="reveal" style="margin-bottom:22px">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>/painel · Vendas e comissões</span></div><img src="img/borari-dashboard.webp" alt="Painel de vendas e comissões do Iate Borarí" loading="lazy"></div>
+      <figcaption>Painel: ingressos vendidos, faturamento por dia, comissões e passeio mais vendido</figcaption>
+    </figure>
+    <div class="gallery g-3 reveal">
+      <figure><div class="browser"><div class="bar"><i></i><i></i><i></i><span>/painel</span></div><img src="img/borari-painel.webp" alt="Tela inicial do painel com vendas da semana" loading="lazy"></div><figcaption>Resumo da semana com comparativo</figcaption></figure>
+      <figure><div class="browser"><div class="bar"><i></i><i></i><i></i><span>/painel/financeiro</span></div><img src="img/borari-financeiro.webp" alt="Financeiro: despesas e lucro por saída" loading="lazy"></div><figcaption>Despesas e lucro de cada saída</figcaption></figure>
+      <figure><div class="browser"><div class="bar"><i></i><i></i><i></i><span>/painel/embarque</span></div><img src="img/borari-embarque.webp" alt="Lista de embarque por data" loading="lazy"></div><figcaption>Lista de embarque, com PDF</figcaption></figure>
     </div>
 
     <div class="features-title reveal">O que o sistema faz</div>
     <div class="features reveal">
-      <div class="feat"><h4><small>01</small>Venda de ingressos</h4><ul><li>Passeios fixos da semana e datas especiais</li><li>Escolha pelo calendário</li><li>Faixas de preço, cada uma com suas vagas</li><li>Pagamento online com confirmação na hora</li></ul></div>
-      <div class="feat"><h4><small>02</small>Experiência do cliente</h4><ul><li>Abertura com vídeo do passeio</li><li>Área "Meus ingressos"</li><li>Depoimentos, perguntas frequentes e local de embarque</li><li>WhatsApp direto para fretar o barco em eventos privados</li></ul></div>
-      <div class="feat"><h4><small>03</small>Gestão e integração</h4><ul><li>Painel para cadastrar passeios, fotos e preços</li><li>Valor de repasse definido por passeio</li><li>API que o Hotel Gold Martan usa para vender pacotes</li><li>SEO e prévia bonita do link ao compartilhar</li></ul></div>
+      <div class="feat"><h4><small>01</small>Venda online</h4><ul><li>Saídas criadas sozinhas a partir da rotina de cada passeio</li><li>Lotes com preço crescente e vagas limitadas</li><li>Trava contra venda acima da capacidade do barco</li><li>Pix e cartão, com confirmação automática</li></ul></div>
+      <div class="feat"><h4><small>02</small>Ingresso e embarque</h4><ul><li>QR code individual por passageiro, enviado por e-mail</li><li>Leitura do QR pela câmera do celular</li><li>Check-in no tablet e lista de embarque em PDF</li><li>Aniversariantes destacados para a equipe</li></ul></div>
+      <div class="feat"><h4><small>03</small>Equipe de vendas</h4><ul><li>Link próprio para cada vendedor, com comissão automática</li><li>Registro de vendas feitas fora do site</li><li>Aprovação de comissões e ranking por vendedor</li><li>Histórico de cada alteração</li></ul></div>
+      <div class="feat"><h4><small>04</small>Gestão do negócio</h4><ul><li>Faturamento, ocupação e comparativo semanal</li><li>Despesas por categoria e lucro de cada saída</li><li>Previsão de passageiros para a cozinha</li><li>Sorteios auditáveis entre aniversariantes</li></ul></div>
+      <div class="feat"><h4><small>05</small>Autonomia da equipe</h4><ul><li>Passeios, preços, lotes e fotos editados pelo painel</li><li>Ordem e textos do site organizados sem programador</li><li>Datas de lua cheia calculadas para os passeios especiais</li><li>6 perfis de acesso: sócio, gestor, vendedor, embarque, cozinha e financeiro</li></ul></div>
+      <div class="feat"><h4><small>06</small>Integrações</h4><ul><li>Atendimento com IA no Instagram</li><li>API para o Hotel Gold Martan vender pacotes</li><li>Repasse ao hotel calculado por passeio</li><li>E-mails transacionais e relatórios em PDF</li></ul></div>
+    </div>
+
+    <div class="highlight reveal">
+      <div class="ic">🤖</div>
+      <p><b>Uma IA que vende de verdade no Instagram.</b> Ela responde clientes no direct consultando as <b>mesmas vagas e preços do site</b> e, quando fecha uma venda, gera ingresso, QR code e comissão como qualquer outra compra. Quando aparece reclamação, reembolso ou uma pergunta que ela não sabe responder, a IA para e chama uma pessoa da equipe em vez de inventar uma resposta.</p>
     </div>
 
     <div class="stack-row reveal">
       <span class="lbl">Tecnologias</span>
-      <span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Supabase (PostgreSQL + Storage)</span><span class="tag">Mercado Pago</span><span class="tag">API REST</span><span class="tag">Vercel</span>
+      <span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">PostgreSQL (Supabase)</span><span class="tag">Mercado Pago</span><span class="tag">Claude API (IA)</span><span class="tag">Instagram API</span><span class="tag">QR Code</span><span class="tag">Resend</span><span class="tag">Vercel</span>
     </div>
+    <p class="note reveal">As telas do painel aparecem com dados de demonstração, para proteger as informações da empresa e dos clientes.</p>
   </div>
 </article>
 
